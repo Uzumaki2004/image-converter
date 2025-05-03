@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Style Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Image Style Converter</h1>
+            <p>Transform your photos into different artistic styles</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="imageInput" accept="image/*">
+                    <label for="imageInput" class="upload-label">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <span>Choose an image or drag it here</span>
+                    </label>
+                </div>
+                <div class="image-preview hidden" id="originalPreview">
+                    <h3>Original Image</h3>
+                    <img id="originalImage" alt="Original image preview">
+                </div>
+            </div>
+
+            <div class="style-selection">
+                <h2>Select Style:</h2>
+                <div class="style-grid">
+                    <button data-style="ghibli">
+                        <img src="assets/ghibli-thumbnail.jpg" alt="Studio Ghibli">
+                        <span>Studio Ghibli</span>
+                    </button>
+                    <button data-style="disney">
+                        <img src="assets/disney-thumbnail.jpg" alt="Disney">
+                        <span>Disney</span>
+                    </button>
+                    <button data-style="pixar">
+                        <img src="assets/pixar-thumbnail.jpg" alt="Pixar">
+                        <span>Pixar</span>
+                    </button>
+                    <button data-style="dreamworks">
+                        <img src="assets/dreamworks-thumbnail.jpg" alt="DreamWorks">
+                        <span>DreamWorks</span>
+                    </button>
+                    <button data-style="arcane">
+                        <img src="assets/arcane-thumbnail.jpg" alt="Arcane">
+                        <span>Arcane</span>
+                    </button>
+                    <button data-style="anime">
+                        <img src="assets/anime-thumbnail.jpg" alt="Anime">
+                        <span>Anime</span>
+                    </button>
+                    <button data-style="manga">
+                        <img src="assets/manga-thumbnail.jpg" alt="Manga">
+                        <span>Manga</span>
+                    </button>
+                    <button data-style="gta">
+                        <img src="assets/gta-thumbnail.jpg" alt="GTA V">
+                        <span>GTA V</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="result-section hidden" id="resultSection">
+                <h2>Converted Image</h2>
+                <div class="result-container">
+                    <div class="image-comparison">
+                        <img id="convertedImage" alt="Converted image">
+                    </div>
+                    <button id="downloadBtn" class="download-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Download Image
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <div class="loading-overlay hidden" id="loadingOverlay">
+            <div class="spinner"></div>
+            <p>Converting your image...</p>
+            <p class="status" id="statusText">Initializing</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
